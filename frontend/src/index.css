@@ -16,7 +16,7 @@ code {
 }
 
 .page_container {
-  @apply px-4 md:px-8 lg:px-10 py-3 md:py-6 min-h-[800px]
+  @apply px-4 md:px-8 lg:px-10 py-3 md:py-6 h-auto min-h-[calc(100vh-176px)]
 }
 
 .link {
