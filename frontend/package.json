@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@solidjs/router": "^0.13.3",
+    "axios": "^1.6.8",
     "flowbite": "^2.3.0",
     "solid-icons": "^1.1.0",
     "solid-js": "^1.8.11"

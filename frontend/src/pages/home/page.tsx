@@ -5,16 +5,25 @@ import { TiTick } from "solid-icons/ti"
 import { HiSolidHandThumbUp } from 'solid-icons/hi'
 import { BiSolidDirections } from 'solid-icons/bi'
 import { A } from "@solidjs/router"
+import axios, { AxiosResponse } from "axios";
+import { getTest } from "../../apis";
+import { GetTest } from "../../apis/controller";
 
 const HomePage: Component = () => {
     const [loaded, setLoaded] = createSignal(false);
-    onMount(() => setTimeout(() => {
-        setLoaded(true)
-    }, 1000))
+    async function loadTest() {
+        return await GetTest();
+    }
+    onMount(async () => {
+        console.log(await loadTest());
+        setTimeout(() => {
+            setLoaded(true)
+        }, 1000)
+    })
     return (
         <>
         <img src={hero_logo} alt="logo" class={"max-h-80 w-screen object-cover"} />
-        <div class="page_container">
+        <div class={styles.home_container}>
             <div class="text-4xl text-center">Welcome to Let's Hang Out!</div>
             <div class={styles.app_description}>Scheduling gatherings with your peers could be a pain in the ass, especially for those with packed schedules.</div>
             <div class={styles.app_description}>Throwing available timeslots into chats seems messy, what if something helps you visualize them?</div>
@@ -36,7 +45,7 @@ const HomePage: Component = () => {
                 </div>
             </div>
                 
-            <A href="/about" class="flex justify-center w-fit mx-auto">
+            <A href="/about" class="flex justify-center w-fit mx-auto my-4">
             <button data-modal-target="defaultModal" data-modal-toggle="defaultModal" class="text-center w-auto mt-8 text-white bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800" type="button">
                 Implementation
             </button>
