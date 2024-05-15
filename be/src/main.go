@@ -26,6 +26,7 @@ func getTestResponse(c *gin.Context) {
 func main() {
 	const BASE_PATH = "/api/v1"
 	router := gin.Default()
+	gin.SetMode(gin.ReleaseMode)
 	router.GET(BASE_PATH+"/", getTestResponse)
 
 	router.Run("localhost:8000")
