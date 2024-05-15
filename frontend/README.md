@@ -1,34 +1,18 @@
-## Usage
+# Frontend
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+Requirement: have NodeJS installed in your OS (preferably v18.18.2)
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+This project uses the SolidJS framework alongside Tailwind CSS and Flowbite for UI components. 
 
-```bash
-$ npm install # or pnpm install or yarn install
+SolidJS is chosen as an alternative to React because it is more efficient with reactive primitives as to avoid overloading the browser, and the entire project can be very lightweight (deployment can be done in 15 seconds). Tailwind and Flowbite provide quick solutions to designed components so I can focus on functionalities than raging at CSS.
+
+To run the code, run:
+
+```
+npm install
+npm run dev
 ```
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+The client should be running in [localhost:3000](http://localhost:3000)
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm run dev` or `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+The frontend uses Vite as a build tool as an alternative to NPM.
