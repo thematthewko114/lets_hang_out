@@ -1,5 +1,4 @@
-module lets_hang_out/backend
-
+module github.com/thematthewko114/lets_hang_out/backend
 go 1.23
 
 require (
